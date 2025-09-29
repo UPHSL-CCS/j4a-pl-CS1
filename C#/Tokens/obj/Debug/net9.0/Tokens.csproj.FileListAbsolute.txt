@@ -1,0 +1,14 @@
+D:\C#\Tokens\bin\Debug\net9.0\Tokens.exe
+D:\C#\Tokens\bin\Debug\net9.0\Tokens.deps.json
+D:\C#\Tokens\bin\Debug\net9.0\Tokens.runtimeconfig.json
+D:\C#\Tokens\bin\Debug\net9.0\Tokens.dll
+D:\C#\Tokens\bin\Debug\net9.0\Tokens.pdb
+D:\C#\Tokens\obj\Debug\net9.0\Tokens.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\Tokens\obj\Debug\net9.0\Tokens.AssemblyInfoInputs.cache
+D:\C#\Tokens\obj\Debug\net9.0\Tokens.AssemblyInfo.cs
+D:\C#\Tokens\obj\Debug\net9.0\Tokens.csproj.CoreCompileInputs.cache
+D:\C#\Tokens\obj\Debug\net9.0\Tokens.dll
+D:\C#\Tokens\obj\Debug\net9.0\refint\Tokens.dll
+D:\C#\Tokens\obj\Debug\net9.0\Tokens.pdb
+D:\C#\Tokens\obj\Debug\net9.0\Tokens.genruntimeconfig.cache
+D:\C#\Tokens\obj\Debug\net9.0\ref\Tokens.dll
