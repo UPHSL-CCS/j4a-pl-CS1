@@ -1,0 +1,8 @@
+D:\j4a-pl-CS1-main\prelim-review\C#\syntax\obj\Debug\net9.0\syntax.GeneratedMSBuildEditorConfig.editorconfig
+D:\j4a-pl-CS1-main\prelim-review\C#\syntax\obj\Debug\net9.0\syntax.AssemblyInfoInputs.cache
+D:\j4a-pl-CS1-main\prelim-review\C#\syntax\obj\Debug\net9.0\syntax.AssemblyInfo.cs
+D:\j4a-pl-CS1-main\prelim-review\C#\syntax\obj\Debug\net9.0\syntax.csproj.CoreCompileInputs.cache
+D:\j4a-pl-CS1-main\prelim-review\csharp\syntax\obj\Debug\net9.0\syntax.GeneratedMSBuildEditorConfig.editorconfig
+D:\j4a-pl-CS1-main\prelim-review\csharp\syntax\obj\Debug\net9.0\syntax.AssemblyInfoInputs.cache
+D:\j4a-pl-CS1-main\prelim-review\csharp\syntax\obj\Debug\net9.0\syntax.AssemblyInfo.cs
+D:\j4a-pl-CS1-main\prelim-review\csharp\syntax\obj\Debug\net9.0\syntax.csproj.CoreCompileInputs.cache

@@ -1,0 +1,3 @@
+﻿int x = 10;
+int y = 0;
+int z = x / y;   //  Runtime error: Division by zero
