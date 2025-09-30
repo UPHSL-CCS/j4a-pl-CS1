@@ -16,7 +16,7 @@
   - [x] Python
   - [x] C#
 - [ ] Token examples (keywords, identifiers, literals)
-  - [ ] Python
+  - [x] Python
   - [ ] C#
 - [ ] Variable scope (global vs local)
   - [ ] Python
