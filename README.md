@@ -8,3 +8,46 @@
 - Bermundo, Nicole
 - Depoo, Zynnon Kyle
 - Torres, Junell
+
+### To-Do
+
+#### Coding Exercise: Syntax, Semantics, Lexical Analysis, Type Systems
+- [ ] Syntax vs semantic errors
+  - [x] Python
+  - [x] C#
+- [ ] Token examples (keywords, identifiers, literals)
+  - [ ] Python
+  - [ ] C#
+- [ ] Variable scope (global vs local)
+  - [ ] Python
+  - [ ] C#
+- [ ] Strong vs weak typing
+  - [x] Python
+  - [ ] C#
+
+#### Coding Exercise: Control Flow and Expressions
+- [ ] if-else statement
+  - [ ] Python
+  - [ ] C#
+- [ ] Loops (for, while)
+  - [ ] Python
+  - [ ] C#
+- [ ] Arithmetic and logical expressions
+  - [ ] Python
+  - [ ] C#
+
+#### Coding Exercise: Subprograms and Modularity
+- [ ] Functions / methods
+  - [ ] Python
+  - [ ] C#
+- [ ] Modularization
+  - [ ] Python
+  - [ ] C#
+
+#### Coding Exercise: Concurrency Exploration
+- [ ] Threads / async tasks
+  - [ ] Python
+  - [ ] C#
+- [ ] Parallelism
+  - [ ] Python
+  - [ ] C#
