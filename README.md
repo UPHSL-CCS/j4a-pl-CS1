@@ -11,7 +11,7 @@
 
 ### To-Do
 
-#### Coding Exercise: Syntax, Semantics, Lexical Analysis, Type Systems
+### Coding Exercise: Syntax, Semantics, Lexical Analysis, Type Systems
 - [ ] Syntax vs semantic errors
   - [x] Python
   - [x] C#
@@ -27,7 +27,7 @@
 
 #### Reflection
 
-#### Coding Exercise: Control Flow and Expressions
+### Coding Exercise: Control Flow and Expressions
 - [ ] if-else statement
   - [ ] Python
   - [ ] C#
@@ -38,19 +38,19 @@
   - [ ] Python
   - [ ] C#
 
-#### Reflection
+### Reflection
 
-#### Coding Exercise: Subprograms and Modularity
+### Coding Exercise: Subprograms and Modularity
 - [ ] Functions / methods
   - [ ] Python
   - [ ] C#
 - [ ] Modularization
   - [ ] Python
   - [ ] C#
+  
+### Reflection
 
-#### Reflection
-
-#### Coding Exercise: Concurrency Exploration
+### Coding Exercise: Concurrency Exploration
 - [ ] Threads / async tasks
   - [ ] Python
   - [ ] C#
@@ -58,4 +58,4 @@
   - [ ] Python
   - [ ] C#
 
-#### Reflection
+### Reflection
