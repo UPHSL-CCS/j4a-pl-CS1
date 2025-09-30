@@ -11,8 +11,6 @@ print x;
 
 # More code with glaring errors is as follows:
 
-print(y) # ERROR: Cannot use variable before it is declared.
-
 print x; # ERROR: Missing parentheses in the keyword.
 
 def myFunction: # ERROR: Missing parentheses in the function name.
