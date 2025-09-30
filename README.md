@@ -25,6 +25,8 @@
   - [x] Python
   - [ ] C#
 
+#### Reflection
+
 #### Coding Exercise: Control Flow and Expressions
 - [ ] if-else statement
   - [ ] Python
@@ -36,6 +38,8 @@
   - [ ] Python
   - [ ] C#
 
+#### Reflection
+
 #### Coding Exercise: Subprograms and Modularity
 - [ ] Functions / methods
   - [ ] Python
@@ -44,6 +48,8 @@
   - [ ] Python
   - [ ] C#
 
+#### Reflection
+
 #### Coding Exercise: Concurrency Exploration
 - [ ] Threads / async tasks
   - [ ] Python
@@ -51,3 +57,5 @@
 - [ ] Parallelism
   - [ ] Python
   - [ ] C#
+
+#### Reflection
