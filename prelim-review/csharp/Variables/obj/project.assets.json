@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\semantics.csproj",
-      "projectName": "semantics",
-      "projectPath": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\semantics.csproj",
+      "projectUniqueName": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\Variables\\Variables.csproj",
+      "projectName": "Variables",
+      "projectPath": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\Variables\\Variables.csproj",
       "packagesPath": "C:\\Users\\Junell\\.nuget\\packages\\",
-      "outputPath": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\obj\\",
+      "outputPath": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\Variables\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Junell\\AppData\\Roaming\\NuGet\\NuGet.Config"

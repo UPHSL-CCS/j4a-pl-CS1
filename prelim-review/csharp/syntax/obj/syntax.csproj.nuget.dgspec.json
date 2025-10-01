@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj": {}
+    "D:\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj": {
+    "D:\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj",
+        "projectUniqueName": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj",
         "projectName": "syntax",
-        "projectPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj",
+        "projectPath": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj",
         "packagesPath": "C:\\Users\\Junell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\obj\\",
+        "outputPath": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Junell\\AppData\\Roaming\\NuGet\\NuGet.Config"
