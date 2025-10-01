@@ -9,53 +9,8 @@
 - Depoo, Zynnon Kyle
 - Torres, Junell
 
-### To-Do
-
 ### Coding Exercise: Syntax, Semantics, Lexical Analysis, Type Systems
-- [ ] Syntax vs semantic errors
-  - [x] Python
-  - [x] C#
-- [ ] Token examples (keywords, identifiers, literals)
-  - [x] Python
-  - [x] C#
-- [ ] Variable scope (global vs local)
-  - [ ] Python
-  - [ ] C#
-- [ ] Strong vs weak typing
-  - [x] Python
-  - [x] C#
-
-#### Reflection
+### 📝 Reflection
 
 ### Coding Exercise: Control Flow and Expressions
-- [ ] if-else statement
-  - [ ] Python
-  - [ ] C#
-- [ ] Loops (for, while)
-  - [ ] Python
-  - [ ] C#
-- [ ] Arithmetic and logical expressions
-  - [ ] Python
-  - [ ] C#
-
-### Reflection
-
-### Coding Exercise: Subprograms and Modularity
-- [ ] Functions / methods
-  - [ ] Python
-  - [ ] C#
-- [ ] Modularization
-  - [ ] Python
-  - [ ] C#
-  
-### Reflection
-
-### Coding Exercise: Concurrency Exploration
-- [ ] Threads / async tasks
-  - [ ] Python
-  - [ ] C#
-- [ ] Parallelism
-  - [ ] Python
-  - [ ] C#
-
-### Reflection
+### 📝 Reflection
