@@ -18,7 +18,7 @@ The most challenging concept is strong vs weak typing. It can be tricky to demon
 
 2. What tools did you use to complete the exercise?
    
-I used a text editor/IDE for coding, Git for version control, and programming languages like Python and JavaScript to demonstrate the concepts.
+I used a text Visual Studio Code for coding, Git for version control, and programming languages like Python and C# to demonstrate the concepts.
 
 
 ### Coding Exercise: Control Flow and Expressions
