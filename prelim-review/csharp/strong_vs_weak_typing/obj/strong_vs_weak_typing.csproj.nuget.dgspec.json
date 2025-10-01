@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj": {}
+    "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\strong_vs_weak_typing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj": {
+    "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\strong_vs_weak_typing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj",
-        "projectName": "syntax",
-        "projectPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj",
+        "projectUniqueName": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\strong_vs_weak_typing.csproj",
+        "projectName": "strong_vs_weak_typing",
+        "projectPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\strong_vs_weak_typing.csproj",
         "packagesPath": "C:\\Users\\Junell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\obj\\",
+        "outputPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Junell\\AppData\\Roaming\\NuGet\\NuGet.Config"

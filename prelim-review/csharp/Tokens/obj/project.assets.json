@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj",
-      "projectName": "syntax",
-      "projectPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\syntax.csproj",
+      "projectUniqueName": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\Tokens.csproj",
+      "projectName": "Tokens",
+      "projectPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\Tokens.csproj",
       "packagesPath": "C:\\Users\\Junell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\syntax\\obj\\",
+      "outputPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Junell\\AppData\\Roaming\\NuGet\\NuGet.Config"

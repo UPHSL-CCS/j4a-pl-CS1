@@ -1,0 +1,15 @@
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\bin\Debug\net9.0\Tokens.exe
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\bin\Debug\net9.0\Tokens.deps.json
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\bin\Debug\net9.0\Tokens.runtimeconfig.json
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\bin\Debug\net9.0\Tokens.dll
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\bin\Debug\net9.0\Tokens.pdb
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\obj\Debug\net9.0\Tokens.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\obj\Debug\net9.0\Tokens.AssemblyInfoInputs.cache
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\obj\Debug\net9.0\Tokens.AssemblyInfo.cs
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\obj\Debug\net9.0\Tokens.csproj.CoreCompileInputs.cache
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\obj\Debug\net9.0\Tokens.sourcelink.json
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\obj\Debug\net9.0\Tokens.dll
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\obj\Debug\net9.0\refint\Tokens.dll
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\obj\Debug\net9.0\Tokens.pdb
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\obj\Debug\net9.0\Tokens.genruntimeconfig.cache
+C:\Users\Junell\j4a-pl-CS1\prelim-review\csharp\Tokens\obj\Debug\net9.0\ref\Tokens.dll
