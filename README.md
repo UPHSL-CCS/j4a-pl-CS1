@@ -17,13 +17,13 @@
   - [x] C#
 - [ ] Token examples (keywords, identifiers, literals)
   - [x] Python
-  - [ ] C#
+  - [x] C#
 - [ ] Variable scope (global vs local)
   - [ ] Python
   - [ ] C#
 - [ ] Strong vs weak typing
   - [x] Python
-  - [ ] C#
+  - [x] C#
 
 #### Reflection
 
