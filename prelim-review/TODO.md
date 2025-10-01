@@ -1,0 +1,13 @@
+## Coding Exercise: Syntax, Semantics, Lexical Analysis, Type Systems
+- [ ] Syntax vs semantic errors
+  - [x] Python
+  - [x] C#
+- [ ] Token examples (keywords, identifiers, literals)
+  - [x] Python
+  - [x] C#
+- [ ] Variable scope (global vs local)
+  - [ ] Python
+  - [ ] C#
+- [ ] Strong vs weak typing
+  - [x] Python
+  - [x] C#
