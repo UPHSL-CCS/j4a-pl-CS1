@@ -6,7 +6,7 @@
   - [x] Python
   - [x] C#
 - [ ] Variable scope (global vs local)
-  - [ ] Python
+  - [x] Python
   - [ ] C#
 - [ ] Strong vs weak typing
   - [x] Python
