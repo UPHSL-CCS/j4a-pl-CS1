@@ -1,6 +1,9 @@
 # Python is strongly typed
-x = "10"      # x is a string
-y = 5         # y is an integer
+x = "10"      # string
+y = 5         # integer
 
-# This will cause an error because you can't directly add string and int
-print(x + y)  # TypeError: can only concatenate str (not "int") to str
+# Hindi pwede pagsamahin directly ang string at int
+# Mag-eerror ito kasi magkaibang type
+print(x + y)  # Error: can only concatenate str (not "int") to str
+
+#print(int(x)+y) # Convert muna si x to int para pwede i-add sa integer na y
