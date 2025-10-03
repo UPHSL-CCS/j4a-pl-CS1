@@ -1,0 +1,15 @@
+D:\j4a-pl-CS1\control-flow\csharp\Loops\bin\Debug\net9.0\Loops.exe
+D:\j4a-pl-CS1\control-flow\csharp\Loops\bin\Debug\net9.0\Loops.deps.json
+D:\j4a-pl-CS1\control-flow\csharp\Loops\bin\Debug\net9.0\Loops.runtimeconfig.json
+D:\j4a-pl-CS1\control-flow\csharp\Loops\bin\Debug\net9.0\Loops.dll
+D:\j4a-pl-CS1\control-flow\csharp\Loops\bin\Debug\net9.0\Loops.pdb
+D:\j4a-pl-CS1\control-flow\csharp\Loops\obj\Debug\net9.0\Loops.GeneratedMSBuildEditorConfig.editorconfig
+D:\j4a-pl-CS1\control-flow\csharp\Loops\obj\Debug\net9.0\Loops.AssemblyInfoInputs.cache
+D:\j4a-pl-CS1\control-flow\csharp\Loops\obj\Debug\net9.0\Loops.AssemblyInfo.cs
+D:\j4a-pl-CS1\control-flow\csharp\Loops\obj\Debug\net9.0\Loops.csproj.CoreCompileInputs.cache
+D:\j4a-pl-CS1\control-flow\csharp\Loops\obj\Debug\net9.0\Loops.sourcelink.json
+D:\j4a-pl-CS1\control-flow\csharp\Loops\obj\Debug\net9.0\Loops.dll
+D:\j4a-pl-CS1\control-flow\csharp\Loops\obj\Debug\net9.0\refint\Loops.dll
+D:\j4a-pl-CS1\control-flow\csharp\Loops\obj\Debug\net9.0\Loops.pdb
+D:\j4a-pl-CS1\control-flow\csharp\Loops\obj\Debug\net9.0\Loops.genruntimeconfig.cache
+D:\j4a-pl-CS1\control-flow\csharp\Loops\obj\Debug\net9.0\ref\Loops.dll
