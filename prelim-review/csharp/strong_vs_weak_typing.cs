@@ -1,38 +1,34 @@
-// Example: Strong vs Weak Typing in C#
-
 using System;
 
 class Program
 {
     static void Main()
     {
-        // Strong typing: C# enforces data types strictly
-        int number = 10;
-        // number = "Hello"; // ❌ This would cause a compile-time error
+        Console.WriteLine("-Strong Typing-");
+        // --- Strong typing ---
+        // Dito, fixed ang type ng variable (string at int).
+        // Hindi pwede mag-assign ng ibang type, else error agad.
+        
+        string name = "Kyle";
+        int age = 21;
 
-        Console.WriteLine("Strong typing example: " + number);
+        Console.WriteLine("Name: " + name);
+        Console.WriteLine("Age: " + age);
 
-        // Weak typing idea using 'dynamic'
-        dynamic weakVar = 10;
-        Console.WriteLine("Weak typing with dynamic: " + weakVar);
+        // Example: name = 123; Error (kasi dapat string si name)
 
-        weakVar = "Now I'm a string"; // ✅ Allowed because it's dynamic
-        Console.WriteLine("Weak typing with dynamic: " + weakVar);
+        Console.WriteLine("-Weak Typing-");
+        // --- Weak typing with dynamic ---
+        // Dito, pwede magpalit-palit ng type kasi dynamic siya.
+        
+        dynamic data = "Hello"; // string
+        Console.WriteLine("Data: " + data);
+
+        data = 123;   // int
+        Console.WriteLine("Data: " + data);
+        
+        // Dynamic acts like a weak typing pwede string, int, bool, etc.
+        // Note: minsan nag-eerror lang siya habang running,
+        // hindi kagaya ng strong typing na error agad sa compile time.
     }
-}
-
-// another example of Weak typing //
-
-using System;
-
-class Program
-{
-        Statuc void Main()
-        {
-            dynamic value = 10;
-            console.WriteLine(value + 50; //Works fine, prints 15
-
-            value = "hello";
-            Console.writeLine(value =5); // Compile, but runtime error
-        }
 }
