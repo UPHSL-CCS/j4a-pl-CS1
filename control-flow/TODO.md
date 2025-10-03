@@ -1,10 +1,10 @@
 ### Coding Exercise: Control Flow and Expressions
-- [ ] if-else statement
-  - [ ] Python
+- [x] if-else statement
+  - [x] Python
   - [x] C#
-- [ ] Loops (for, while)
-  - [ ] Python
+- [x] Loops (for, while)
+  - [x] Python
   - [x] C#
-- [ ] Arithmetic and logical expressions
-  - [ ] Python
+- [x] Arithmetic and logical expressions
+  - [x] Python
   - [x] C#
