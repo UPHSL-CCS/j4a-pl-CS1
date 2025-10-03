@@ -20,5 +20,6 @@ def introduction():
     get_name = input("What is your name? ")  # 'get_name' is a local variable.
     return get_name # It is possible to use get_name elsewhere through the return statement.
 
-print(introduction())
+print(get_name) # This won't work here because the variable get_name is local, and can only be accessed within introduction()
 
+print(introduction())
