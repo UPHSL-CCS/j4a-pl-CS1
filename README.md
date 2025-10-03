@@ -14,11 +14,11 @@
 
 1. What concept was most challenging in the activity?
    
-The most challenging concept is strong vs weak typing. It can be tricky to demonstrate clearly because weak typing allows automatic type conversion (which can lead to unexpected behavior), while strong typing enforces strict rules. This can be confusing, especially for beginners.
+The most challenging concept we've encountered was strong vs weak typing. It can be tricky to demonstrate clearly because weak typing allows automatic type conversion which can lead to unexpected behavior, while strong typing enforces strict rules. This can be confusing, especially for beginners.
 
 2. What tools did you use to complete the exercise?
    
-I used a text Visual Studio Code for coding, Git for version control, and programming languages like Python and C# to demonstrate the concepts.
+we used a text Visual Studio Code for coding, Git for version control, and programming languages like Python and C# to demonstrate the concepts.
 
 
 ### Coding Exercise: Control Flow and Expressions
