@@ -1,0 +1,51 @@
+import random
+
+print("Welcome to Rock, Paper, Scissors!")
+
+choices = ["rock", "paper", "scissors"]
+
+# Arithmetic: score counters (pang-track ng score)
+player_score = 0
+computer_score = 0
+
+while True:
+    # Player input
+    player = input("Type rock, paper, or scissors (or 'quit' to exit): ").lower()
+
+    # Kung gusto na mag quit sa game
+    if player == "quit":
+        print("Final Score -> You:", player_score, "Computer:", computer_score)
+        print("Thanks for playing!")
+        break
+
+    # Check kung valid yung input
+    if player not in choices:
+        print("Invalid choice, try again.")
+        continue
+
+    # Computer random choice
+    computer = random.choice(choices)
+    print("Computer chose:", computer)
+
+    # If-Else logic para malaman kung win, lose, or tie
+    if player == computer:
+        print("It's a tie!")
+    elif (player == "rock" and computer == "scissors") or \
+         (player == "paper" and computer == "rock") or \
+         (player == "scissors" and computer == "paper"):
+        print("You win this round!")
+        player_score += 1   # arithmetic: dagdag 1 sa score ng player
+    else:
+        print("You lose this round!")
+        computer_score += 1  # arithmetic: dagdag 1 sa score ng computer
+
+    # Ipakita current scores
+    print("Score -> You:", player_score, "| Computer:", computer_score, "\n")
+
+    # Logical check: first to 3 points will win
+    if player_score == 3:
+        print("Congratulations! You are the champion! Galing mo! YEY! :>")
+        break
+    elif computer_score == 3:
+        print("Computer wins the game! Better luck next time! HUHU :<")
+        break
