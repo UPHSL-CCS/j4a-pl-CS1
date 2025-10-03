@@ -20,3 +20,19 @@ class Program
         Console.WriteLine("Weak typing with dynamic: " + weakVar);
     }
 }
+
+// another example of Weak typing //
+
+using System;
+
+class Program
+{
+        Statuc void Main()
+        {
+            dynamic value = 10;
+            console.WriteLine(value + 50; //Works fine, prints 15
+
+            value = "hello";
+            Console.writeLine(value =5); // Compile, but runtime error
+        }
+}
