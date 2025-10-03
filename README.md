@@ -14,7 +14,7 @@
 
 1. What concept was most challenging in the activity?
    
-The most challenging concept we've encountered was strong vs weak typing. It can be tricky to demonstrate clearly because weak typing allows automatic type conversion which can lead to unexpected behavior, while strong typing enforces strict rules. This can be confusing, especially for beginners.
+The most challenging part we encountered in this activity was organizing our answers as a group and pushing our code to the repository. It took some time to coordinate and make sure each member’s work was properly added.
 
 2. What tools did you use to complete the exercise?
    
