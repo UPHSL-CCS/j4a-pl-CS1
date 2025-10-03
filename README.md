@@ -18,8 +18,4 @@ The most challenging part we encountered in this activity was organizing our ans
 
 2. What tools did you use to complete the exercise?
    
-we used a text Visual Studio Code for coding, Git for version control, and programming languages like Python and C# to demonstrate the concepts.
-
-
-### Coding Exercise: Control Flow and Expressions
-### 📝 Reflection
+We used the text editor Visual Studio Code for coding, Git for version control and collaboration, and programming languages like Python and C# to demonstrate the concepts.
