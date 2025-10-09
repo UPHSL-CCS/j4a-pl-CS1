@@ -1,21 +1,23 @@
 ﻿using System;
+
 class Program
 {
     static void Main()
     {
-        int number = 10; // Example number
+        Console.WriteLine("Enter a number:");
+        int number = int.Parse(Console.ReadLine()); // Convert input from string to int
 
-        if (number > 0) // Condition to check if the number is positive
+        if (number > 0)
         {
-            Console.WriteLine("The number is positive.");   // This line will be executed
+            Console.WriteLine("The number is positive.");
         }
-        else if (number < 0) // Condition to check if the number is negative
+        else if (number < 0)
         {
-            Console.WriteLine("The number is negative."); // Output if the condition is true
+            Console.WriteLine("The number is negative.");
         }
-        else // Condition to check if the number is zero
+        else
         {
-            Console.WriteLine("The number is zero.");  // Output if the condition is true
+            Console.WriteLine("The number is zero.");
         }
     }
 }
