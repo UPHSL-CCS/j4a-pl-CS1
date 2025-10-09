@@ -1,25 +1,29 @@
 # Subprogram 2: Take Order 
 def take_order(menu):
-    # Ipakita ang kasalukuyang menu
     print("\nMenu:")
-    for item, price in menu.items():
-        print(f"{item} - ₱{price}")
+    menu_items = list(menu.items())
+    for idx, (item, price) in enumerate(menu_items, 1):
+        print(f"{idx}. {item} - ₱{price}")
 
-    # Gumawa ng empty dictionary para sa order ng user
     order = {}
-    # Loop para makapag-order ng marami hangga’t di pa tapos
+    
     while True:
-        food = input("\nEnter item to order (or 'done' to finish): ")
-        # Kapag "done" ang nilagay, lalabas sa loop
-        if food.lower() == "done":
+        choice = input("\nEnter item number to order (or 'done' to finish): ")
+        if choice.lower() == "done":
             break
-        # Kung nasa menu ang pagkain, itutuloy ang pag-order
-        elif food in menu:
-            qty = int(input("Enter quantity: "))
-            # I-save sa order dictionary ang pagkain at quantity
-            order[food] = qty
+
+        #  Note: NUMBER LANG IEENTER, HINDI NAME
+        if not choice.isdigit() or not (1 <= int(choice) <= len(menu_items)):
+            print("Invalid item number!")
+            continue
+        
+        item_name = menu_items[int(choice) - 1][0]
+        qty = input("Enter quantity: ")
+        if not qty.isdigit() or int(qty) <= 0:
+            print("Invalid quantity!")
+            continue
+        # I-save sa order dictionary ang pagkain at quantity
+        order[item_name] = order.get(item_name, 0) + int(qty)
         # Kung wala sa menu, sabihin na “not found”
-        else:
-            print("Item not found in menu!")
-    # Ibalik ang order sa main program
+    
     return order
