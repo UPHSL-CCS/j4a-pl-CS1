@@ -1,9 +1,12 @@
 ## Coding Exercise: Subprograms and Modularity
 
-[ ] Python - Food Ordering Program
-    [ ] Menu Module
-    [ ] Ordering Module
+[x] Python - Food Ordering Program
+    [x] Main
+    [x] Menu Module
+    [x] Ordering Module
+    [x] Receipt Module
 
-[ ] C# - TBA @Junell
-    [ ] Module 1
-    [ ] Module 2
+[x] C# - Food Ordering Program
+    [x] Main
+    [x] Menu Module
+    [x] Orders Module

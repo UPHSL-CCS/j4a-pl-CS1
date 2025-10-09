@@ -52,7 +52,7 @@ We also haven't used it, but exceptions/error handling is similar, at least on t
 
 As for expressions, Python, which uses and/or/not among other things is more easily readable compared to C#, which has &&/||/! as equivalents. 
 
-## [Coding Exercise: Subprograms and Modularity]()
+## [Coding Exercise: Subprograms and Modularity](https://github.com/UPHSL-CCS/j4a-pl-CS1/tree/main/subprograms)
 
 **🎯 Objective**
 
@@ -62,4 +62,10 @@ As for expressions, Python, which uses and/or/not among other things is more eas
 
 1. Explanation of modularity and abstraction.
 
+    Modularity is the practice of breaking up code into smaller components called modules or subprograms. Each of these modules handles a particular task or function, and can be maintained, modified, or tested without having to change the entire body of the code.
+
+    On the other hand, abstraction is the practice of hiding a function under a layer that only exposes the critical parts, such as input and output. This is useful in making programs more accessible; an example is low-level and high-level languages. Older languages like C and Assembly require the programmer to do everything by hand. Languages like Python use similar functions, but they are done in the background where the programmer doesn't have to worry about them. 
+
 2. Why modular code is easier to maintain and reuse.
+
+    As stated above, modular code can be maintained, modified, and tested without affecting the other parts of the code, which should make debugging easier. This modularity also makes the code reusable, especially if it handles common tasks like even-or-odd checking or prime checking, since these modules can be slotted into other projects without much issue.
