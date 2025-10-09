@@ -1,0 +1,5 @@
+# files from c# compiler
+bin/
+obj/
+*.csproj
+*.sln
