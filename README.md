@@ -9,7 +9,8 @@
 - Depoo, Zynnon Kyle
 - Torres, Junell
 
-## Coding Exercise: Syntax, Semantics, Lexical Analysis, Type Systems
+## [Coding Exercise: Syntax, Semantics, Lexical Analysis, Type Systems](https://github.com/UPHSL-CCS/j4a-pl-CS1/tree/main/prelim-review)
+
 
 **🎯 Objective**
 
@@ -25,7 +26,7 @@ The most challenging part we encountered in this activity was organizing our ans
    
 We used the text editor Visual Studio Code for coding, Git for version control and collaboration, and programming languages like Python and C# to demonstrate the concepts.
 
-## Coding Exercise: Control Flow and Expressions
+## [Coding Exercise: Control Flow and Expressions](https://github.com/UPHSL-CCS/j4a-pl-CS1/tree/main/control-flow)
 
 **🎯 Objective**
 
@@ -50,3 +51,15 @@ Loop control is similar, in that break and continue are both implemented. In Pyt
 We also haven't used it, but exceptions/error handling is similar, at least on the surface. Python uses try/except/finally, where we can use multiple excepts to handle different errors. C# uses try/catch/finally.
 
 As for expressions, Python, which uses and/or/not among other things is more easily readable compared to C#, which has &&/||/! as equivalents. 
+
+## [Coding Exercise: Subprograms and Modularity]()
+
+**🎯 Objective**
+
+    To implement and evaluate modularity and abstraction using subprograms across languages.
+ 
+**📝 Reflection**
+
+1. Explanation of modularity and abstraction.
+
+2. Why modular code is easier to maintain and reuse.
