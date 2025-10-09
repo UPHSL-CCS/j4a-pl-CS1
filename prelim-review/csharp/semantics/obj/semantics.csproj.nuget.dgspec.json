@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\semantics.csproj": {}
+    "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\semantics.csproj": {}
   },
   "projects": {
-    "D:\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\semantics.csproj": {
+    "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\semantics.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\semantics.csproj",
+        "projectUniqueName": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\semantics.csproj",
         "projectName": "semantics",
-        "projectPath": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\semantics.csproj",
-        "packagesPath": "C:\\Users\\Junell\\.nuget\\packages\\",
-        "outputPath": "D:\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\obj\\",
+        "projectPath": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\semantics.csproj",
+        "packagesPath": "C:\\Users\\KYLE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\semantics\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Junell\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\KYLE\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

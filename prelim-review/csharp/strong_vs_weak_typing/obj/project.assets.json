@@ -8,19 +8,19 @@
     "net9.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Junell\\.nuget\\packages\\": {}
+    "C:\\Users\\KYLE\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\strong_vs_weak_typing.csproj",
+      "projectUniqueName": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\strong_vs_weak_typing.csproj",
       "projectName": "strong_vs_weak_typing",
-      "projectPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\strong_vs_weak_typing.csproj",
-      "packagesPath": "C:\\Users\\Junell\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\obj\\",
+      "projectPath": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\strong_vs_weak_typing.csproj",
+      "packagesPath": "C:\\Users\\KYLE\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\strong_vs_weak_typing\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Junell\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\KYLE\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

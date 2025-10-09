@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\j4a-pl-CS1\\control-flow\\csharp\\arithmetic-logical-expressions\\arithmetic-logical-expressions.csproj": {}
+    "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\control-flow\\csharp\\arithmetic-logical-expressions\\arithmetic-logical-expressions.csproj": {}
   },
   "projects": {
-    "D:\\j4a-pl-CS1\\control-flow\\csharp\\arithmetic-logical-expressions\\arithmetic-logical-expressions.csproj": {
+    "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\control-flow\\csharp\\arithmetic-logical-expressions\\arithmetic-logical-expressions.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\j4a-pl-CS1\\control-flow\\csharp\\arithmetic-logical-expressions\\arithmetic-logical-expressions.csproj",
+        "projectUniqueName": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\control-flow\\csharp\\arithmetic-logical-expressions\\arithmetic-logical-expressions.csproj",
         "projectName": "arithmetic-logical-expressions",
-        "projectPath": "D:\\j4a-pl-CS1\\control-flow\\csharp\\arithmetic-logical-expressions\\arithmetic-logical-expressions.csproj",
-        "packagesPath": "C:\\Users\\Junell\\.nuget\\packages\\",
-        "outputPath": "D:\\j4a-pl-CS1\\control-flow\\csharp\\arithmetic-logical-expressions\\obj\\",
+        "projectPath": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\control-flow\\csharp\\arithmetic-logical-expressions\\arithmetic-logical-expressions.csproj",
+        "packagesPath": "C:\\Users\\KYLE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\control-flow\\csharp\\arithmetic-logical-expressions\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Junell\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\KYLE\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

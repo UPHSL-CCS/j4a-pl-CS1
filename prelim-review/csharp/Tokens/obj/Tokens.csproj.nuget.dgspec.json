@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\Tokens.csproj": {}
+    "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\Tokens.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\Tokens.csproj": {
+    "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\Tokens.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\Tokens.csproj",
+        "projectUniqueName": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\Tokens.csproj",
         "projectName": "Tokens",
-        "projectPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\Tokens.csproj",
-        "packagesPath": "C:\\Users\\Junell\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Junell\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\obj\\",
+        "projectPath": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\Tokens.csproj",
+        "packagesPath": "C:\\Users\\KYLE\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\KYLE\\prelim-preview\\j4a-pl-CS1\\prelim-review\\csharp\\Tokens\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Junell\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\KYLE\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -59,7 +59,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
