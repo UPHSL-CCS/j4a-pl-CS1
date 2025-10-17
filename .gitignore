@@ -3,3 +3,7 @@ bin/
 obj/
 *.csproj
 *.sln
+
+# files from py compielr
+__pycache__/
+*.pyc
