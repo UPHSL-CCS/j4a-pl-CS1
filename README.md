@@ -72,7 +72,7 @@ As for expressions, Python, which uses and/or/not among other things is more eas
 
     Modular code is easier to maintain, edit, and test since changes in one module do not impact the others. It increases reusability by allowing common activities such as checking for even or prime numbers to be reused across several projects.
 
-## [Coding Exercise: Subprograms and Modularity](https://github.com/UPHSL-CCS/j4a-pl-CS1/tree/main/concurrency)
+## [Coding Exercise: Concurrency Exploration](https://github.com/UPHSL-CCS/j4a-pl-CS1/tree/main/concurrency)
 
 **🎯 Objective**
 
