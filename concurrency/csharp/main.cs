@@ -41,4 +41,11 @@ namespace ConcurrencyDemo
 
             foreach (char letter in letters)
             {
-                Console.WriteLine
+                Console.WriteLine($"Task 2 - Letter: {letter}");
+
+                // Simulate a 1-second delay to mimic time-consuming work
+                Task.Delay(1000).Wait();
+            }
+        }
+    }
+}
