@@ -19,12 +19,12 @@ runner2 = threading.Thread(target=runner, args=("Runner 2",))
 
 print("The race has started!\n")
 
-# Start na ang dalawang threads (tatakbo sabay)
+# Start ang dalawang threads (tatakbo sabay)
 runner1.start()
 runner2.start()
 
-# Hihintayin natin pareho matapos bago mag-end ang program
+# Hihintayin na pareho matapos bago mag-end ang program
 runner1.join()
 runner2.join()
 
-print("\n Race finished! Let's see who was faster next time!")
+print("\n Race finished!")
