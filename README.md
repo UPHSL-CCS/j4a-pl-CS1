@@ -80,17 +80,17 @@ As for expressions, Python, which uses and/or/not among other things is more eas
  
 **📝 Reflection**
 
-   1. Explanation of the concurrency model used
+1. Explanation of the concurrency model used
 
    In our activity, our group explored how Python and C# handle concurrency using different models. In the Python program, we applied a thread-based concurrency model using the threading module. Each runner function ran in its own thread, allowing both to execute simultaneously. This gave us a clear idea of how multiple tasks can run side by side within the same program, even if the CPU rapidly switches between them.
 
    On the other hand, the C# program used a task-based asynchronous concurrency model with Task.Run() and async/await. This model uses the Task Parallel Library (TPL) to manage concurrent operations efficiently without blocking the main thread. It allowed us to run two methods at the same time while keeping the program smooth and responsive. 
    Through this activity, our group learned that although both languages achieve concurrency, Python relies on manual thread management, while C# provides a more modern and optimized approach through tasks. 
 
-   2. Challenges faced when implementing concurrency
+2. Challenges faced when implementing concurrency
       
-      Python:
-Our group’s main challenge was understanding and managing threading. It was difficult to control how threads ran simultaneously since their outputs often appeared mixed or out of order. We also had to learn how to use start() and join() properly to make sure both threads finished before the program ended.
+    **Python**:
+    Our group’s main challenge was understanding and managing threading. It was difficult to control how threads ran simultaneously since their outputs often appeared mixed or out of order. We also had to learn how to use start() and join() properly to make sure both threads finished before the program ended.
 
-       C#:
-Our challenge was learning how tasks worked with async and await. It was a bit confusing to understand how Task.Run() and Task.WhenAll() allowed methods to run together. We also had to ensure proper synchronization so both tasks completed correctly. Through these challenges, we learned how concurrency improves program performance when managed properly.
+    **C#**:
+    Our challenge was learning how tasks worked with async and await. It was a bit confusing to understand how Task.Run() and Task.WhenAll() allowed methods to run together. We also had to ensure proper synchronization so both tasks completed correctly. Through these challenges, we learned how concurrency improves program performance when managed properly.
