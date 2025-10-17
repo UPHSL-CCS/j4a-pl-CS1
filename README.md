@@ -69,4 +69,17 @@ As for expressions, Python, which uses and/or/not among other things is more eas
 2. Why modular code is easier to maintain and reuse.
 
     As stated above, modular code can be maintained, modified, and tested without affecting the other parts of the code, which should make debugging easier. This modularity also makes the code reusable, especially if it handles common tasks like even-or-odd checking or prime checking, since these modules can be slotted into other projects without much issue.
-   Modular code is easier to maintain, edit, and test since changes in one module do not impact the others. It increases reusability by allowing common activities such as checking for even or prime numbers to be reused across several projects.
+
+    Modular code is easier to maintain, edit, and test since changes in one module do not impact the others. It increases reusability by allowing common activities such as checking for even or prime numbers to be reused across several projects.
+
+## [Coding Exercise: Subprograms and Modularity](https://github.com/UPHSL-CCS/j4a-pl-CS1/tree/main/concurrency)
+
+**🎯 Objective**
+
+    To analyze and demonstrate concurrency models using a programming language of choice.
+ 
+**📝 Reflection**
+
+    Explanation of the concurrency model used
+
+    Challenges faced when implementing concurrency
