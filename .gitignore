@@ -1,8 +1,6 @@
 # files from c# compiler
 bin/
 obj/
-*.csproj
-*.sln
 
 # files from py compielr
 __pycache__/
