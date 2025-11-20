@@ -3,3 +3,89 @@
 This folder houses all of the code written for the Programming Languages Coding Exercises 1-4.
 
 As they are no longer needed, they have been moved here for posterity.
+
+## [Coding Exercise: Syntax, Semantics, Lexical Analysis, Type Systems](https://github.com/UPHSL-CCS/j4a-pl-CS1/tree/main/prelim-review)
+
+
+**🎯 Objective**
+
+    To reinforce basic concepts (syntax & semantics, lexical analysis, naming/scope, type systems) and connect them to later topics
+ 
+**📝 Reflection**
+
+1. What concept was most challenging in the activity?
+   
+The most challenging part we encountered in this activity was organizing our answers as a group and pushing our code to the repository. It took some time to coordinate and make sure each member’s work was properly added.
+
+2. What tools did you use to complete the exercise?
+   
+We used the text editor Visual Studio Code for coding, Git for version control and collaboration, and programming languages like Python and C# to demonstrate the concepts.
+
+## [Coding Exercise: Control Flow and Expressions](https://github.com/UPHSL-CCS/j4a-pl-CS1/tree/main/control-flow)
+
+**🎯 Objective**
+
+    To explore and compare control flow constructs and expressions across programming languages.
+ 
+**📝 Reflection**
+
+1. What concept was most challenging in the activity?
+
+The group as a whole is less familiar with C#, so creating the programs for loops, if-else, and expressions was harder at first.
+
+2. Enumerate the differences in how each language handles control flow.
+
+In conditionals (if-else): the two languages are very similar. Python uses if-elif-else, as well as indentation to define the structure and hierarchy, while C# uses if-else if-else, and relies on {} to denote hierarchy.
+
+There is also a different way of doing conditions, which is switch/match, which we hadn't used. In more recent versions of Python, there is match case, while C# natively supports switch case.
+
+Loops are similar to each other syntax-wise, with both for loops and while loops present. A minor difference is that C# uses counters in for loops, while Python does the for loop using an iterable, like a range, list, or a string.
+
+Loop control is similar, in that break and continue are both implemented. In Python, it is possible to add an else clause to fulfill an additional action.
+
+We also haven't used it, but exceptions/error handling is similar, at least on the surface. Python uses try/except/finally, where we can use multiple excepts to handle different errors. C# uses try/catch/finally.
+
+As for expressions, Python, which uses and/or/not among other things is more easily readable compared to C#, which has &&/||/! as equivalents. 
+
+## [Coding Exercise: Subprograms and Modularity](https://github.com/UPHSL-CCS/j4a-pl-CS1/tree/main/subprograms)
+
+**🎯 Objective**
+
+    To implement and evaluate modularity and abstraction using subprograms across languages.
+ 
+**📝 Reflection**
+
+1. Explanation of modularity and abstraction.
+
+    Modularity is the practice of breaking up code into smaller components called modules or subprograms. Each of these modules handles a particular task or function, and can be maintained, modified, or tested without having to change the entire body of the code.
+
+    On the other hand, abstraction is the practice of hiding a function under a layer that only exposes the critical parts, such as input and output. This is useful in making programs more accessible; an example is low-level and high-level languages. Older languages like C and Assembly require the programmer to do everything by hand. Languages like Python use similar functions, but they are done in the background where the programmer doesn't have to worry about them. 
+
+2. Why modular code is easier to maintain and reuse.
+
+    As stated above, modular code can be maintained, modified, and tested without affecting the other parts of the code, which should make debugging easier. This modularity also makes the code reusable, especially if it handles common tasks like even-or-odd checking or prime checking, since these modules can be slotted into other projects without much issue.
+
+    Modular code is easier to maintain, edit, and test since changes in one module do not impact the others. It increases reusability by allowing common activities such as checking for even or prime numbers to be reused across several projects.
+
+## [Coding Exercise: Concurrency Exploration](https://github.com/UPHSL-CCS/j4a-pl-CS1/tree/main/concurrency)
+
+**🎯 Objective**
+
+    To analyze and demonstrate concurrency models using a programming language of choice.
+ 
+**📝 Reflection**
+
+1. Explanation of the concurrency model used
+
+   In our activity, our group explored how Python and C# handle concurrency using different models. In the Python program, we applied a thread-based concurrency model using the threading module. Each runner function ran in its own thread, allowing both to execute simultaneously. This gave us a clear idea of how multiple tasks can run side by side within the same program, even if the CPU rapidly switches between them.
+
+   On the other hand, the C# program used a task-based asynchronous concurrency model with Task.Run() and async/await. This model uses the Task Parallel Library (TPL) to manage concurrent operations efficiently without blocking the main thread. It allowed us to run two methods at the same time while keeping the program smooth and responsive. 
+   Through this activity, our group learned that although both languages achieve concurrency, Python relies on manual thread management, while C# provides a more modern and optimized approach through tasks. 
+
+2. Challenges faced when implementing concurrency
+      
+    **Python**:
+    Our group’s main challenge was understanding and managing threading. It was difficult to control how threads ran simultaneously since their outputs often appeared mixed or out of order. We also had to learn how to use start() and join() properly to make sure both threads finished before the program ended.
+
+    **C#**:
+    Our challenge was learning how tasks worked with async and await. It was a bit confusing to understand how Task.Run() and Task.WhenAll() allowed methods to run together. We also had to ensure proper synchronization so both tasks completed correctly. Through these challenges, we learned how concurrency improves program performance when managed properly.
