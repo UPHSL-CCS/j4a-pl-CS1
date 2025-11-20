@@ -1,6 +1,6 @@
 # billing.py
 
-from menu import menu_items
+from backend.menu import menu_items
 
 def calculate_total(order):
     # Calculate total price of the order
