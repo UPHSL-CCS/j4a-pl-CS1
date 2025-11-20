@@ -1,10 +1,10 @@
 # main.py
 # Entry point ng system
 
-from menu import display_menu, menu_items
-from orders import create_order
-from billing import print_receipt
-from utils import get_valid_input
+from backend.menu import display_menu, menu_items
+from backend.orders import create_order
+from backend.billing import print_receipt
+from backend.utils import get_valid_input
 
 # Restaurant branding
 RESTAURANT_NAME = "PULP"
