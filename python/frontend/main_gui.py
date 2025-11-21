@@ -2,23 +2,20 @@
 
 import sys
 import os
-
-# Fix backend import
-sys.path.append(os.path.join(os.path.dirname(__file__), "..", "backend"))
-from menu import menu_items  # now works
-
 import tkinter as tk
 from tkinter import messagebox
 from PIL import Image, ImageTk
 
+# Backend import
+sys.path.append(os.path.join(os.path.dirname(__file__), "..", "backend"))
+from menu import menu_items
+
 # -------------------------------------------------
 # Globals
 # -------------------------------------------------
-
 order = {}
 ORIGINAL_IMAGES = {}
 PHOTO_CACHE = {}
-CARD_WIDGETS = {}
 
 CARD_PADX = 10
 CARD_PADY = 10
@@ -30,42 +27,24 @@ ASSETS_DIR = os.path.join(os.path.dirname(__file__), "assets")
 PLACEHOLDER = os.path.join(ASSETS_DIR, "placeholder.png")
 
 # -------------------------------------------------
-# Image Helpers (Safe Version)
+# Helpers
 # -------------------------------------------------
-
 def asset_path_for_item(item):
-    """Return the path to the item's image, or placeholder if missing."""
     base = item.get("image")
     if base:
         full = os.path.join(ASSETS_DIR, base)
         if os.path.exists(full):
             return full
-        else:
-            print(f"Warning: Image not found for item '{item['name']}': {base}")
-
-    # Try filename from item name
     name = item.get("name", "").lower().replace(" ", "_") + ".png"
     full = os.path.join(ASSETS_DIR, name)
     if os.path.exists(full):
         return full
-
-    import re
-    cleaned = re.sub(r'[^a-z0-9_]', '', item.get("name", "").lower().replace(" ", "_")) + ".png"
-    full2 = os.path.join(ASSETS_DIR, cleaned)
-    if os.path.exists(full2):
-        return full2
-
-    # fallback placeholder
     if os.path.exists(PLACEHOLDER):
         return PLACEHOLDER
-
-    print(f"Warning: No image found for '{item['name']}', and placeholder missing!")
     return None
 
 def load_original_image(path):
-    """Load image safely. Returns None if it fails."""
     if not path or not os.path.exists(path):
-        print(f"Warning: Cannot load image: {path}")
         return None
     if path in ORIGINAL_IMAGES:
         return ORIGINAL_IMAGES[path]
@@ -73,37 +52,29 @@ def load_original_image(path):
         img = Image.open(path).convert("RGBA")
         ORIGINAL_IMAGES[path] = img
         return img
-    except Exception as e:
-        print(f"Error loading image '{path}': {e}")
+    except:
         return None
 
 def get_resized_photo(path, w, h):
-    """Resize image safely and return PhotoImage. Returns None if image is missing."""
+    if not path or w <= 0 or h <= 0:
+        return None
     key = (path, w, h)
     if key in PHOTO_CACHE:
         return PHOTO_CACHE[key]
-
     orig = load_original_image(path)
     if orig is None:
         return None
-
-    try:
-        ow, oh = orig.size
-        ratio = min(w / ow, h / oh)
-        new_w = int(ow * ratio)
-        new_h = int(oh * ratio)
-        resized = orig.resize((new_w, new_h), Image.LANCZOS)
-        photo = ImageTk.PhotoImage(resized)
-        PHOTO_CACHE[key] = photo
-        return photo
-    except Exception as e:
-        print(f"Error resizing image '{path}': {e}")
-        return None
+    ow, oh = orig.size
+    ratio = min(w / ow, h / oh)
+    new_w, new_h = int(ow * ratio), int(oh * ratio)
+    resized = orig.resize((new_w, new_h), Image.LANCZOS)
+    photo = ImageTk.PhotoImage(resized)
+    PHOTO_CACHE[key] = photo
+    return photo
 
 # -------------------------------------------------
 # Order Management
 # -------------------------------------------------
-
 def add_to_order(item):
     iid = item["id"]
     if iid in order:
@@ -112,41 +83,62 @@ def add_to_order(item):
         order[iid] = {"item": item, "quantity": 1}
     refresh_order_panel()
 
-def decrease_quantity(iid):
-    if iid in order:
-        order[iid]["quantity"] -= 1
-        if order[iid]["quantity"] <= 0:
-            del order[iid]
-    refresh_order_panel()
-
-def remove_item_from_order(iid):
-    if iid in order:
-        del order[iid]
-    refresh_order_panel()
-
 def calculate_total():
     return sum(v["item"]["price"] * v["quantity"] for v in order.values())
 
-# -------------------------------------------------
-# Order Panel Updates
-# -------------------------------------------------
-
 def refresh_order_panel():
-    order_listbox.delete(0, tk.END)
-
-    for v in order.values():
+    for widget in order_items_frame.winfo_children():
+        widget.destroy()
+    for iid, v in order.items():
         it = v["item"]
         qty = v["quantity"]
         subtotal = it["price"] * qty
-        order_listbox.insert(tk.END, f"{it['name']} x {qty} - {subtotal}")
 
-    total_label.config(text=f"Total: {calculate_total()}")
+        item_frame = tk.Frame(order_items_frame, bg="#2b2b2b")
+        item_frame.pack(fill="x", pady=4, padx=5)
+
+        # Image
+        path = asset_path_for_item(it)
+        photo = get_resized_photo(path, 60, 60)
+        if photo:
+            img_lbl = tk.Label(item_frame, image=photo, bg="#2b2b2b")
+            img_lbl.image = photo
+            img_lbl.pack(side="left", padx=5)
+        else:
+            tk.Label(item_frame, text="No Img", bg="#2b2b2b", fg="white", width=8).pack(side="left", padx=5)
+
+        # Text info
+        tk.Label(item_frame, text=f"{it['name']} x {qty} - ₱{subtotal}", bg="#2b2b2b",
+                 fg="white", font=("Helvetica", 12, "bold"), anchor="w").pack(side="left", fill="x")
+
+        # Controls
+        ctrl_frame = tk.Frame(item_frame, bg="#2b2b2b")
+        ctrl_frame.pack(side="right", padx=5)
+
+        tk.Button(ctrl_frame, text="+", width=2, command=lambda iid=iid: increase_item(iid)).pack(side="left", padx=1)
+        tk.Button(ctrl_frame, text="-", width=2, command=lambda iid=iid: decrease_item(iid)).pack(side="left", padx=1)
+        tk.Button(ctrl_frame, text="Remove", width=6, command=lambda iid=iid: remove_item(iid)).pack(side="left", padx=1)
+
+    total_label.config(text=f"Total: ₱{calculate_total()}")
+
+def increase_item(iid):
+    order[iid]["quantity"] += 1
+    refresh_order_panel()
+
+def decrease_item(iid):
+    order[iid]["quantity"] -= 1
+    if order[iid]["quantity"] <= 0:
+        del order[iid]
+    refresh_order_panel()
+
+def remove_item(iid):
+    del order[iid]
+    refresh_order_panel()
 
 def on_checkout():
     if not order:
         messagebox.showinfo("Checkout", "No items in order.")
         return
-
     receipt = "---- PULP Receipt ----\n"
     for cat in menu_items.keys():
         cat_items = [v for v in order.values() if v["item"] in menu_items[cat]]
@@ -156,25 +148,15 @@ def on_checkout():
                 it = v["item"]
                 qty = v["quantity"]
                 subtotal = it["price"] * qty
-                receipt += f"{it['name']} x {qty} - {subtotal}\n"
-
-    receipt += f"\nTotal: {calculate_total()}\nThank you for your order!"
+                receipt += f"{it['name']} x {qty} - ₱{subtotal}\n"
+    receipt += f"\nTotal: ₱{calculate_total()}\nThank you for your order!"
     messagebox.showinfo("Receipt", receipt)
-
     order.clear()
     refresh_order_panel()
 
 # -------------------------------------------------
 # Card Events
 # -------------------------------------------------
-
-def card_on_enter(event, frame):
-    frame.config(highlightthickness=2, highlightbackground="#222222")
-
-def card_on_leave(event, frame, selected):
-    if not selected.get():
-        frame.config(highlightthickness=1, highlightbackground="#cccccc")
-
 def card_on_click(frame, item, selected):
     if not selected.get():
         frame.config(highlightthickness=3, highlightbackground="#000000")
@@ -182,13 +164,11 @@ def card_on_click(frame, item, selected):
     else:
         frame.config(highlightthickness=1, highlightbackground="#cccccc")
         selected.set(False)
-
     add_to_order(item)
 
 # -------------------------------------------------
 # Responsive Layout
 # -------------------------------------------------
-
 def compute_columns(width):
     min_card = CARD_MIN_WIDTH + CARD_PADX * 2
     return max(1, width // min_card)
@@ -197,193 +177,125 @@ def rebuild_menu_grid(event=None):
     menu_frame.update_idletasks()
     w = menu_frame.winfo_width()
     cols = compute_columns(max(300, w))
-
     for widget in menu_inner.winfo_children():
         widget.destroy()
-
     PHOTO_CACHE.clear()
     row = 0
-
     for category, items in menu_items.items():
-        tk.Label(
-            menu_inner,
-            text=category,
-            font=("Helvetica", 14, "bold"),
-            bg=menu_inner["bg"]
-        ).grid(row=row, column=0, columnspan=cols, sticky="w", pady=(10, 4))
-
+        tk.Label(menu_inner, text=category, font=("Helvetica", 14, "bold"),
+                 bg="black", fg="white").grid(row=row, column=0, columnspan=cols, sticky="w", pady=(10,4))
         row += 1
         col = 0
-
         for item in items:
             card = tk.Frame(menu_inner, bg="white",
-                            highlightthickness=1, highlightbackground="#cccccc")
+                            highlightthickness=1, highlightbackground="#cccccc",
+                            bd=2, relief="ridge")
             card.grid(row=row, column=col, padx=CARD_PADX, pady=CARD_PADY, sticky="n")
-
-            card_width = max(CARD_MIN_WIDTH, (w - (cols + 1) * CARD_PADX) // cols)
+            card_width = max(CARD_MIN_WIDTH, (w - (cols+1)*CARD_PADX)//cols)
             img_h = int(card_width * IMAGE_RATIO)
             img_w = card_width - 20
-
             path = asset_path_for_item(item)
             photo = get_resized_photo(path, img_w, img_h)
-
             if photo:
                 img_lbl = tk.Label(card, image=photo, bg="white")
                 img_lbl.image = photo
             else:
                 img_lbl = tk.Label(card, text=item["name"], bg="#eeeeee", width=20, height=8)
-
-            img_lbl.pack(padx=10, pady=(10, 6))
-
-            tk.Label(card, text=item["name"],
-                     font=("Helvetica", 12, "bold"), bg="white").pack()
-            tk.Label(card, text=f"₱{item['price']}",
-                     font=("Helvetica", 11), bg="white").pack(pady=(0, 8))
-
+            img_lbl.pack(padx=10, pady=(10,6))
+            tk.Label(card, text=item["name"], font=("Helvetica", 12, "bold"), bg="white").pack()
+            tk.Label(card, text=f"₱{item['price']}", font=("Helvetica", 11), bg="white").pack(pady=(0,8))
             selected = tk.BooleanVar(value=False)
-
             for widget in (card, img_lbl):
-                widget.bind("<Enter>", lambda e, f=card: card_on_enter(e, f))
-                widget.bind("<Leave>", lambda e, f=card, s=selected: card_on_leave(e, f, s))
                 widget.bind("<Button-1>", lambda e, f=card, it=item, s=selected: card_on_click(f, it, s))
-
             col += 1
             if col >= cols:
                 col = 0
                 row += 1
-
         row += 1
-
     menu_inner.update_idletasks()
 
 # -------------------------------------------------
 # MAIN WINDOW
 # -------------------------------------------------
-
 root = tk.Tk()
-root.title("PULP - The raw element")
+root.title("PULP")
 root.geometry("1200x700")
 root.minsize(700, 500)
-root.configure(bg="white")
+root.configure(bg="black")
 
 # Header
-header = tk.Frame(root, bg="white")
+header = tk.Frame(root, bg="black")
 header.pack(fill="x", padx=20, pady=10)
-
 logo_path = os.path.join(ASSETS_DIR, "logo.png")
 if os.path.exists(logo_path):
     img = load_original_image(logo_path)
     if img:
-        small = img.resize((90, 90), Image.LANCZOS)
-        logo_photo = ImageTk.PhotoImage(small)
-        lbl = tk.Label(header, image=logo_photo, bg="white")
-        lbl.image = logo_photo
-        lbl.pack(side="left", padx=(0, 10))
-else:
-    tk.Label(header, text="PULP", font=("Helvetica", 20, "bold"), bg="white").pack(side="left")
+        logo_photo = ImageTk.PhotoImage(img.resize((160, 160), Image.LANCZOS))
+        tk.Label(header, image=logo_photo, bg="black").pack(expand=True)
+        header.image = logo_photo
 
-tk.Label(header, text="PULP - The raw element",
-         font=("Helvetica", 18), bg="white").pack(side="left")
-
-# Main Content
-content = tk.Frame(root, bg="white")
+# Content
+content = tk.Frame(root, bg="black")
 content.pack(fill="both", expand=True, padx=20, pady=10)
-
 content.grid_rowconfigure(0, weight=1)
 content.grid_columnconfigure(0, weight=3)
 content.grid_columnconfigure(1, weight=1)
 
 # Menu Section
-menu_container = tk.Frame(content, bg="white")
-menu_container.grid(row=0, column=0, sticky="nsew", padx=(0, 10))
-
+menu_container = tk.Frame(content, bg="black")
+menu_container.grid(row=0, column=0, sticky="nsew", padx=(0,10))
 menu_frame = menu_container
-menu_canvas = tk.Canvas(menu_container, bg="white", highlightthickness=0)
+menu_canvas = tk.Canvas(menu_container, bg="black", highlightthickness=0)
 menu_scrollbar = tk.Scrollbar(menu_container, orient="vertical", command=menu_canvas.yview)
 menu_canvas.configure(yscrollcommand=menu_scrollbar.set)
-
 menu_scrollbar.pack(side="right", fill="y")
 menu_canvas.pack(side="left", fill="both", expand=True)
-
-menu_inner = tk.Frame(menu_canvas, bg="white")
-menu_canvas.create_window((0, 0), window=menu_inner, anchor="nw")
+menu_inner = tk.Frame(menu_canvas, bg="black")
+menu_canvas.create_window((0,0), window=menu_inner, anchor="nw")
+menu_inner.bind("<Configure>", lambda e: menu_canvas.configure(scrollregion=menu_canvas.bbox("all")))
+menu_frame.bind("<Configure>", rebuild_menu_grid)
 
 # Order Panel
-order_panel = tk.Frame(content, bg="#f8f8f8", bd=1, relief="solid")
+order_panel = tk.Frame(content, bg="#1e1e1e", bd=2, relief="ridge", highlightthickness=1, highlightbackground="#555555")
 order_panel.grid(row=0, column=1, sticky="nsew")
 
-tk.Label(order_panel, text="Your Order",
-         font=("Helvetica", 14, "bold"), bg="#f8f8f8").pack(pady=10)
+tk.Label(order_panel, text="Your Order", font=("Helvetica", 14, "bold"), bg="#1e1e1e", fg="white").pack(pady=10)
 
-order_listbox = tk.Listbox(order_panel, width=40, height=15, font=("Helvetica", 12))
-order_listbox.pack(padx=10, pady=5)
+# Scrollable frame for items
+order_items_container = tk.Frame(order_panel, bg="#2b2b2b")
+order_items_container.pack(fill="both", expand=True, padx=5, pady=(0,5))
 
-# Controls
-controls = tk.Frame(order_panel, bg="#f8f8f8")
-controls.pack()
+order_canvas = tk.Canvas(order_items_container, bg="#2b2b2b", highlightthickness=0)
+order_scrollbar = tk.Scrollbar(order_items_container, orient="vertical", command=order_canvas.yview)
+order_canvas.configure(yscrollcommand=order_scrollbar.set)
 
-def on_increase():
-    sel = order_listbox.curselection()
-    if not sel:
-        messagebox.showinfo("Info", "Select an item first.")
-        return
-    name = order_listbox.get(sel[0]).split(" x ")[0]
-    for iid, v in order.items():
-        if v["item"]["name"] == name:
-            v["quantity"] += 1
-            break
-    refresh_order_panel()
+order_scrollbar.pack(side="right", fill="y")
+order_canvas.pack(side="left", fill="both", expand=True)
 
-def on_decrease():
-    sel = order_listbox.curselection()
-    if not sel:
-        messagebox.showinfo("Info", "Select an item first.")
-        return
-    name = order_listbox.get(sel[0]).split(" x ")[0]
-    for iid, v in list(order.items()):
-        if v["item"]["name"] == name:
-            v["quantity"] -= 1
-            if v["quantity"] <= 0:
-                del order[iid]
-            break
-    refresh_order_panel()
+order_items_frame = tk.Frame(order_canvas, bg="#2b2b2b")
+order_canvas.create_window((0,0), window=order_items_frame, anchor="nw")
 
-def remove_item_by_selection():
-    sel = order_listbox.curselection()
-    if not sel:
-        messagebox.showinfo("Info", "Select an item first.")
-        return
-    name = order_listbox.get(sel[0]).split(" x ")[0]
-    for iid, v in list(order.items()):
-        if v["item"]["name"] == name:
-            del order[iid]
-            break
-    refresh_order_panel()
+def on_frame_configure(event):
+    order_canvas.configure(scrollregion=order_canvas.bbox("all"))
 
-tk.Button(controls, text="+", width=3, command=on_increase).pack(side="left", padx=5)
-tk.Button(controls, text="-", width=3, command=on_decrease).pack(side="left", padx=5)
-tk.Button(controls, text="Remove", command=remove_item_by_selection).pack(side="left", padx=10)
+order_items_frame.bind("<Configure>", on_frame_configure)
 
-total_label = tk.Label(order_panel, text="Total: 0",
-                       font=("Helvetica", 12, "bold"), bg="#f8f8f8")
-total_label.pack(pady=10)
+def _on_mousewheel(event):
+    order_canvas.yview_scroll(int(-1*(event.delta/120)), "units")
 
-tk.Button(order_panel, text="Checkout", bg="black", fg="white",
-          width=20, command=on_checkout).pack(pady=20)
+order_canvas.bind_all("<MouseWheel>", _on_mousewheel)
 
-# -------------------------------------------------
-# Bind & Run
-# -------------------------------------------------
+# Bottom frame for total and checkout
+order_bottom_frame = tk.Frame(order_panel, bg="#1e1e1e")
+order_bottom_frame.pack(fill="x", side="bottom", pady=10)
 
-def on_canvas_configure(event):
-    menu_canvas.configure(scrollregion=menu_canvas.bbox("all"))
+total_label = tk.Label(order_bottom_frame, text="Total: 0", font=("Helvetica", 12, "bold"), bg="#1e1e1e", fg="white")
+total_label.pack(side="left", padx=10)
 
-menu_inner.bind("<Configure>", on_canvas_configure)
+checkout_btn = tk.Button(order_bottom_frame, text="Checkout", bg="white", fg="black", width=15, relief="raised", bd=2, command=on_checkout)
+checkout_btn.pack(side="right", padx=10)
 
-def on_root_resize(event):
-    rebuild_menu_grid()
+# Initial build
+root.after(300, rebuild_menu_grid)
 
-root.bind("<Configure>", on_root_resize)
-
-root.after(150, rebuild_menu_grid)
 root.mainloop()
