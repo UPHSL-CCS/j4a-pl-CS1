@@ -1,49 +1,50 @@
 # main_gui.py
-
 import sys
 import os
 import tkinter as tk
 from tkinter import messagebox
-from PIL import Image, ImageTk
+from PIL import Image, ImageTk  # For handling images
 
 # Backend import
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "backend"))
-from menu import menu_items
+from menu import menu_items  # Import menu data
 
 # -------------------------------------------------
 # Globals
 # -------------------------------------------------
-order = {}
-ORIGINAL_IMAGES = {}
-PHOTO_CACHE = {}
+order = {}  # Stores ordered items and quantities
+ORIGINAL_IMAGES = {}  # Cache original images
+PHOTO_CACHE = {}  # Cache resized images
 
+# UI constants
 CARD_PADX = 10
 CARD_PADY = 10
 CARD_MIN_WIDTH = 180
 CARD_MIN_HEIGHT = 180
 IMAGE_RATIO = 0.75
 
-ASSETS_DIR = os.path.join(os.path.dirname(__file__), "assets")
-PLACEHOLDER = os.path.join(ASSETS_DIR, "placeholder.png")
+ASSETS_DIR = os.path.join(os.path.dirname(__file__), "assets")  # Images folder
+PLACEHOLDER = os.path.join(ASSETS_DIR, "placeholder.png")  # Default image
 
 # -------------------------------------------------
 # Helpers
 # -------------------------------------------------
 def asset_path_for_item(item):
+    """Return image path for item or placeholder"""
     base = item.get("image")
     if base:
         full = os.path.join(ASSETS_DIR, base)
         if os.path.exists(full):
             return full
+    # Try default naming convention
     name = item.get("name", "").lower().replace(" ", "_") + ".png"
     full = os.path.join(ASSETS_DIR, name)
     if os.path.exists(full):
         return full
-    if os.path.exists(PLACEHOLDER):
-        return PLACEHOLDER
-    return None
+    return PLACEHOLDER if os.path.exists(PLACEHOLDER) else None
 
 def load_original_image(path):
+    """Load and cache original image"""
     if not path or not os.path.exists(path):
         return None
     if path in ORIGINAL_IMAGES:
@@ -56,6 +57,7 @@ def load_original_image(path):
         return None
 
 def get_resized_photo(path, w, h):
+    """Resize image and cache the PhotoImage"""
     if not path or w <= 0 or h <= 0:
         return None
     key = (path, w, h)
@@ -76,6 +78,7 @@ def get_resized_photo(path, w, h):
 # Order Management
 # -------------------------------------------------
 def add_to_order(item):
+    """Add item to order or increase quantity"""
     iid = item["id"]
     if iid in order:
         order[iid]["quantity"] += 1
@@ -84,9 +87,11 @@ def add_to_order(item):
     refresh_order_panel()
 
 def calculate_total():
+    """Compute total price"""
     return sum(v["item"]["price"] * v["quantity"] for v in order.values())
 
 def refresh_order_panel():
+    """Update order panel UI with current items"""
     for widget in order_items_frame.winfo_children():
         widget.destroy()
     for iid, v in order.items():
@@ -97,7 +102,7 @@ def refresh_order_panel():
         item_frame = tk.Frame(order_items_frame, bg="#2b2b2b")
         item_frame.pack(fill="x", pady=4, padx=5)
 
-        # Image
+        # Item image
         path = asset_path_for_item(it)
         photo = get_resized_photo(path, 60, 60)
         if photo:
@@ -107,19 +112,18 @@ def refresh_order_panel():
         else:
             tk.Label(item_frame, text="No Img", bg="#2b2b2b", fg="white", width=8).pack(side="left", padx=5)
 
-        # Text info
+        # Item text info
         tk.Label(item_frame, text=f"{it['name']} x {qty} - ₱{subtotal}", bg="#2b2b2b",
                  fg="white", font=("Helvetica", 12, "bold"), anchor="w").pack(side="left", fill="x")
 
-        # Controls
+        # Quantity controls
         ctrl_frame = tk.Frame(item_frame, bg="#2b2b2b")
         ctrl_frame.pack(side="right", padx=5)
-
         tk.Button(ctrl_frame, text="+", width=2, command=lambda iid=iid: increase_item(iid)).pack(side="left", padx=1)
         tk.Button(ctrl_frame, text="-", width=2, command=lambda iid=iid: decrease_item(iid)).pack(side="left", padx=1)
         tk.Button(ctrl_frame, text="Remove", width=6, command=lambda iid=iid: remove_item(iid)).pack(side="left", padx=1)
 
-    total_label.config(text=f"Total: ₱{calculate_total()}")
+    total_label.config(text=f"Total: ₱{calculate_total()}")  # Update total
 
 def increase_item(iid):
     order[iid]["quantity"] += 1
@@ -136,6 +140,7 @@ def remove_item(iid):
     refresh_order_panel()
 
 def on_checkout():
+    """Show receipt and clear order"""
     if not order:
         messagebox.showinfo("Checkout", "No items in order.")
         return
@@ -158,6 +163,7 @@ def on_checkout():
 # Card Events
 # -------------------------------------------------
 def card_on_click(frame, item, selected):
+    """Select card and add item to order"""
     if not selected.get():
         frame.config(highlightthickness=3, highlightbackground="#000000")
         selected.set(True)
@@ -170,10 +176,12 @@ def card_on_click(frame, item, selected):
 # Responsive Layout
 # -------------------------------------------------
 def compute_columns(width):
+    """Compute number of columns in menu grid based on width"""
     min_card = CARD_MIN_WIDTH + CARD_PADX * 2
     return max(1, width // min_card)
 
 def rebuild_menu_grid(event=None):
+    """Rebuild menu grid dynamically for responsive UI"""
     menu_frame.update_idletasks()
     w = menu_frame.winfo_width()
     cols = compute_columns(max(300, w))
@@ -232,16 +240,16 @@ if os.path.exists(logo_path):
     if img:
         logo_photo = ImageTk.PhotoImage(img.resize((160, 160), Image.LANCZOS))
         tk.Label(header, image=logo_photo, bg="black").pack(expand=True)
-        header.image = logo_photo
+        header.image = logo_photo  # Keep reference to prevent garbage collection
 
 # Content
 content = tk.Frame(root, bg="black")
 content.pack(fill="both", expand=True, padx=20, pady=10)
 content.grid_rowconfigure(0, weight=1)
-content.grid_columnconfigure(0, weight=3)
-content.grid_columnconfigure(1, weight=1)
+content.grid_columnconfigure(0, weight=3)  # Menu wider
+content.grid_columnconfigure(1, weight=1)  # Order panel smaller
 
-# Menu Section
+# Menu Section (left)
 menu_container = tk.Frame(content, bg="black")
 menu_container.grid(row=0, column=0, sticky="nsew", padx=(0,10))
 menu_frame = menu_container
@@ -253,34 +261,32 @@ menu_canvas.pack(side="left", fill="both", expand=True)
 menu_inner = tk.Frame(menu_canvas, bg="black")
 menu_canvas.create_window((0,0), window=menu_inner, anchor="nw")
 menu_inner.bind("<Configure>", lambda e: menu_canvas.configure(scrollregion=menu_canvas.bbox("all")))
-menu_frame.bind("<Configure>", rebuild_menu_grid)
+menu_frame.bind("<Configure>", rebuild_menu_grid)  # Rebuild grid on resize
 
-# Order Panel
+# Order Panel (right)
 order_panel = tk.Frame(content, bg="#1e1e1e", bd=2, relief="ridge", highlightthickness=1, highlightbackground="#555555")
 order_panel.grid(row=0, column=1, sticky="nsew")
-
 tk.Label(order_panel, text="Your Order", font=("Helvetica", 14, "bold"), bg="#1e1e1e", fg="white").pack(pady=10)
 
-# Scrollable frame for items
+# Scrollable order items frame
 order_items_container = tk.Frame(order_panel, bg="#2b2b2b")
 order_items_container.pack(fill="both", expand=True, padx=5, pady=(0,5))
-
 order_canvas = tk.Canvas(order_items_container, bg="#2b2b2b", highlightthickness=0)
 order_scrollbar = tk.Scrollbar(order_items_container, orient="vertical", command=order_canvas.yview)
 order_canvas.configure(yscrollcommand=order_scrollbar.set)
-
 order_scrollbar.pack(side="right", fill="y")
 order_canvas.pack(side="left", fill="both", expand=True)
-
 order_items_frame = tk.Frame(order_canvas, bg="#2b2b2b")
 order_canvas.create_window((0,0), window=order_items_frame, anchor="nw")
 
 def on_frame_configure(event):
+    """Update scrollregion when frame changes"""
     order_canvas.configure(scrollregion=order_canvas.bbox("all"))
 
 order_items_frame.bind("<Configure>", on_frame_configure)
 
 def _on_mousewheel(event):
+    """Mousewheel scroll support"""
     order_canvas.yview_scroll(int(-1*(event.delta/120)), "units")
 
 order_canvas.bind_all("<MouseWheel>", _on_mousewheel)
@@ -288,14 +294,11 @@ order_canvas.bind_all("<MouseWheel>", _on_mousewheel)
 # Bottom frame for total and checkout
 order_bottom_frame = tk.Frame(order_panel, bg="#1e1e1e")
 order_bottom_frame.pack(fill="x", side="bottom", pady=10)
-
 total_label = tk.Label(order_bottom_frame, text="Total: 0", font=("Helvetica", 12, "bold"), bg="#1e1e1e", fg="white")
 total_label.pack(side="left", padx=10)
-
 checkout_btn = tk.Button(order_bottom_frame, text="Checkout", bg="white", fg="black", width=15, relief="raised", bd=2, command=on_checkout)
 checkout_btn.pack(side="right", padx=10)
 
-# Initial build
+# Initial menu build
 root.after(300, rebuild_menu_grid)
-
-root.mainloop()
+root.mainloop()  # Start GUI
