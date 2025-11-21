@@ -14,6 +14,27 @@
 ### Restaurant Kiosk 
 
 *Python*
+### PULP Cafe
+
+*Overview*
+The project aims to digitize the ordering process for small businesses. Before, orders were handled manually or with a simple program, which was inefficient and prone to errors. PULP provides an interactive digital system that shows products, prices, and images. It allows customers to add items to an order, modify quantities, and check out easily. The final project version separates backend and frontend to improve structure and maintainability.
+
+*Setup Instructions*
+
+
+*Members*
+Agustin,Jerome Loyd
+Bermundo, Nicole
+Depoo, Zynnon Kyle
+Torres, Junell
+
+*Summary of Enhancements*
+
+*Reflections*
+Depoo:
+Agustin:
+Toress:
+Bermundo: 
 
 ### SMART TASK & REMINDER MANAGER     
 
