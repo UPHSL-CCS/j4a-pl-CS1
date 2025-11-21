@@ -31,6 +31,7 @@ Torres, Junell
 *Summary of Enhancements*
 
 *Reflections*
+---
 Depoo:
 Agustin:
 Toress:
