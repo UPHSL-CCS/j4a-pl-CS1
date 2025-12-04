@@ -33,10 +33,14 @@
 
 *Reflections*
 ---
-- Depoo:
-- Agustin:
-- Toress:
-- Bermundo:
+- Depoo: In this Final Project, I saw firsthand how programming concepts come together in a real system. Modularity and subprograms were especially valuable for me because they helped make our code more organized and reusable. Implementing concurrency also taught me that performance isn’t just about writing code that works—it’s about writing code that works efficiently. I also learned the importance of proper documentation, since it reflects our professionalism and ensures that others can understand the system without difficulty. This project made me more conscious about ethical practices, especially in code management and data handling. It was challenging, but it helped me develop new skills and improved the way I collaborate in a team.
+
+- Agustin: Throughout the Final Project, I realized how important it is to build a system that not only works, but is also clean, modular, and maintainable. Applying concepts like control flow and modular programming helped me see how breaking functions into smaller components makes a system easier to debug and extend. Working with concurrency also challenged me to think more carefully about how tasks run simultaneously and how to manage shared resources properly. The documentation part pushed me to be more professional—writing clear explanations and maintaining ethical coding practices. 
+
+- Torres: Working on the Final Project allowed me to apply several programming concepts in a meaningful way. Integrating control flow, modularity, and concurrency into one system helped me understand how these concepts interact in real applications. I also realized the value of proper documentation—not just for compliance, but for ensuring that the system can be maintained or improved by future developers. This activity taught me that software development is not only about technical skills but also about professionalism, ethics, and clear communication. I am proud of how our group handled research, improvements, and collaboration. The project strengthened both my technical foundation and my discipline as a future IT professional.
+
+- Bermundo: The Final Project challenged me to think beyond writing simple programs and focus on building a complete, cohesive system. Using modularity and subprograms helped us structure the project better, and concurrency introduced me to the complexities of running tasks in parallel. Through this project, I learned how essential proper documentation is—not just for academic requirements but for real-world development. Ethical coding practices, responsible data handling, and professional teamwork were also emphasized, and I realized how much these values matter in the IT field.
+
 
 # Smart Task & Reminder Manager System
 
